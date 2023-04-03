@@ -1,0 +1,6 @@
+FEISHU_CONFIG:
+  FEISHU_URL: https://open.feishu.cn/open-apis
+  FEISHU_API_HOST: https://open.feishu.cn
+  FEISHU_APP_ID: cli_a4a0c84e8c19900b
+  FEISHU_APP_SECRET: 3QbPKJ0RW5LnBJxJGsayxga5LadLcmrh
+  
