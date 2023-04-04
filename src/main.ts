@@ -1,7 +1,9 @@
 import { NestFactory } from '@nestjs/core';
+
 import {
   VersioningType,
   VERSION_NEUTRAL,
+  ValidationPipe,
   Controller,
   Version,
 } from '@nestjs/common';
@@ -28,6 +30,8 @@ async function bootstrap() {
     defaultVersion: [VERSION_NEUTRAL, '1', '2'], //但有的时候，我们需要做针对一些接口做兼容性的更新，而其他的请求是不需要携带版本，又或者请求有多个版本的时候，而默认请求想指定一个版本的话,就这么做
     type: VersioningType.URI,
   });
+  //  启动全局字段校验，保证请求接口字段校验正确。
+  app.useGlobalPipes(new ValidationPipe());
 
   generateDocument(app);
 
